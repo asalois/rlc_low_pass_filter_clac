@@ -32,5 +32,6 @@ for m in range(1, 100000):  # for loop to find different q values
 
 
 w = find_w(list_l[1], cc)
+print("Inductor", "Capacitor", "Resistor")
 print( list_l[1], cc, 710)
 print(w, w / (2*math.pi))

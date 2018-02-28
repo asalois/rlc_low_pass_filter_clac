@@ -1,4 +1,6 @@
 #  a simple program to calculate values of Q and omega not for a series rlc low pass filter
+# by Alex Salois Feb 2018
+
 
 import math
 

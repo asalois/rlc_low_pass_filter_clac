@@ -3,6 +3,7 @@
 
 
 import math
+import numpy as np
 
 
 def find_w (l, c):  # a function to calc w from inputs of the inductor and capacitor values
@@ -13,6 +14,15 @@ def find_w (l, c):  # a function to calc w from inputs of the inductor and capac
 def find_q (r, l, c):  # a function to calc Q from Resistor, Inductor and capacitor values
     q = 1 / r * (math.sqrt(l/c))
     return q
+
+
+f, v = np.loadtxt('input/Lab 6.csv', delimiter=',', unpack=True, skiprows=1)
+
+for i, ele in enumerate(f):
+    if f[i] > 24999 and f[i] < 25001:
+        print("25000=", v[i])
+    if f[i] < 10001 and f[i] > 9999:
+        print("10000=", v[i])
 
 
 # a list to hold values of the inductor values

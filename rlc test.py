@@ -18,6 +18,7 @@ def find_q (r, l, c):  # a function to calc Q from Resistor, Inductor and capaci
 
 f, v = np.loadtxt('input/Lab 6.csv', delimiter=',', unpack=True, skiprows=1)
 
+# a loop to show values in range specified
 for i, ele in enumerate(f):
     if 24999 < f[i] < 25001:
         print("25000=", v[i])
@@ -40,11 +41,13 @@ for m in range(1, 100000):  # for loop to find different q values
     if q > .8:
         if q < .9:
             if m == 710:
-                print(m, q)
+                x = 0
 
-qh = find_q(710*1.05, list_l[1]*1.1, cc*1.10)
-ql = find_q(710*.95, list_l[1]*.9, cc*.9)
-print("Tolerance:", "High=", qh, "Low=", ql)
+
+ql = find_q(710*1.05, list_l[1]*1.1, cc*1.10)
+qh = find_q(710*.95, list_l[1]*.9, cc*.9)
+print("Q=", find_q(710, list_l[1], cc))
+print("Tolerance of Q:", "High=", qh, "Low=", ql)
 w = find_w(list_l[1], cc)
-print("Inductor=", list_l[1], "Capacitor=", cc, "Ressitor=", 710)
-print(w, w / (2*math.pi))
+print("Inductor=", list_l[1], "Capacitor=", cc, "Resistor=", 710)
+print("w=", w, "fo=", w / (2*math.pi))

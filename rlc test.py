@@ -5,13 +5,44 @@
 import math
 import numpy as np
 
+# def fill(array, Q):
+#     for idx, line in enumerate(array):
+#         array[idx] = transfer(idx, 1, Q)
+#     return  array
+#
+#
+# def transfer(w1, w0, Q):
+#     h = w0**2/(w0**2-w1**2+j*w0/Q*w1)
+#     return h
+#
+#
+# size = 10000000
+# w = np.linspace(1, 10000000, size)
+# play = np.empty(size)
+# y = np.empty(size)
+# y = fill(play, 1)
+# z = np.empty(size)
+# z = fill(play, 2)
+# a = np.empty(size)
+# a = fill(play, .8)
+# b = np.empty(size)
+# b = fill(play, 5)
+#
+# plt.figure(1)
+# plt.plot(w, y, label='Q = 1')
+# plt.plot(w, z, label='Q = 2')
+# plt.plot(w, a, label='Q = .8')
+# plt.plot(w, b, label='Q = 5')
+#
+# plt.show()
 
-def find_w (l, c):  # a function to calc w from inputs of the inductor and capacitor values
+
+def find_w(l, c):  # a function to calc w from inputs of the inductor and capacitor values
     w = 1 / math.sqrt(l * c)
     return w
 
 
-def find_q (r, l, c):  # a function to calc Q from Resistor, Inductor and capacitor values
+def find_q(r, l, c):  # a function to calc Q from Resistor, Inductor and capacitor values
     q = 1 / r * (math.sqrt(l/c))
     return q
 
